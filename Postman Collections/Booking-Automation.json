@@ -122,6 +122,18 @@
 										"packages": {},
 										"requests": {}
 									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3dad9c75-f2c4-4d5e-92a0-24754c2a75c7",
+										"exec": [
+											"pm.request.url = 'https://restful-booker.herokuapp.com/boo';"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
 								}
 							],
 							"id": "7a16208e-cd01-4df6-9b81-b49df180e698",
@@ -487,6 +499,7 @@
 	],
 	"variable": [
 		{
+			"id": "51471b56-4c52-4e98-8455-ddacc0e259f1",
 			"key": "bookingId",
 			"value": ""
 		}
