@@ -75,7 +75,67 @@
 				},
 				{
 					"name": "Negetive-Test",
-					"item": [],
+					"item": [
+						{
+							"name": "Get Booking Id Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1bc21652-7aca-4d79-aa84-f8a0a6aff191",
+										"exec": [
+											"const schema = {\r",
+											"  type: \"array\",\r",
+											"  items: {\r",
+											"    type: \"object\",\r",
+											"    required: [\"bookingid\"],\r",
+											"    properties: {\r",
+											"      bookingid: { type: \"integer\" }\r",
+											"    }\r",
+											"  }\r",
+											"};\r",
+											"\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response time should be below minimum benchmark\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Response is an array type\", function () {\r",
+											"    pm.expect(pm.response.json()).to.be.an('array');\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Each object contains numeric bookingid\", function () {\r",
+											"    pm.response.json().forEach(item => {\r",
+											"        pm.expect(item).to.have.property('bookingid');\r",
+											"        pm.expect(item.bookingid).to.be.a('number');\r",
+											"    });\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Schema verification\", function () {\r",
+											"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "7a16208e-cd01-4df6-9b81-b49df180e698",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "https://restful-booker.herokuapp.com/booking"
+							},
+							"response": []
+						}
+					],
 					"id": "9a6c698f-e559-440c-bf07-3ef1a9497530"
 				}
 			],
@@ -427,7 +487,6 @@
 	],
 	"variable": [
 		{
-			"id": "9dfd1127-9f38-492a-a9c1-8759a13698fc",
 			"key": "bookingId",
 			"value": ""
 		}
