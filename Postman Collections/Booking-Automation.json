@@ -74,7 +74,7 @@
 					"id": "066773ff-1a4a-4842-9e22-eff3da1922ed"
 				},
 				{
-					"name": "New Folder",
+					"name": "Negetive-Test",
 					"item": [],
 					"id": "9a6c698f-e559-440c-bf07-3ef1a9497530"
 				}
@@ -427,7 +427,7 @@
 	],
 	"variable": [
 		{
-			"id": "cf6be479-3275-4808-8039-3f90b1d845f2",
+			"id": "9dfd1127-9f38-492a-a9c1-8759a13698fc",
 			"key": "bookingId",
 			"value": ""
 		}
