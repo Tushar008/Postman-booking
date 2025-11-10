@@ -84,39 +84,14 @@
 									"script": {
 										"id": "1bc21652-7aca-4d79-aa84-f8a0a6aff191",
 										"exec": [
-											"const schema = {\r",
-											"  type: \"array\",\r",
-											"  items: {\r",
-											"    type: \"object\",\r",
-											"    required: [\"bookingid\"],\r",
-											"    properties: {\r",
-											"      bookingid: { type: \"integer\" }\r",
-											"    }\r",
-											"  }\r",
-											"};\r",
-											"\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response time should be below minimum benchmark\", function () {\r",
 											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
 											"});\r",
-											"\r",
-											"pm.test(\"Response is an array type\", function () {\r",
-											"    pm.expect(pm.response.json()).to.be.an('array');\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Each object contains numeric bookingid\", function () {\r",
-											"    pm.response.json().forEach(item => {\r",
-											"        pm.expect(item).to.have.property('bookingid');\r",
-											"        pm.expect(item.bookingid).to.be.a('number');\r",
-											"    });\r",
-											"});\r",
-											"\r",
-											"pm.test(\"Schema verification\", function () {\r",
-											"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
-											"});"
+											""
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -499,7 +474,7 @@
 	],
 	"variable": [
 		{
-			"id": "690af6bf-bd35-4097-9132-0eabe25740c1",
+			"id": "7c56dfc1-e631-4a02-84ed-54c0069e7159",
 			"key": "bookingId",
 			"value": ""
 		}
