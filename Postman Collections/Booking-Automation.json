@@ -77,7 +77,7 @@
 					"name": "Negetive-Test",
 					"item": [
 						{
-							"name": "Get Booking Id Copy",
+							"name": "Get Booking Id invalid url",
 							"event": [
 								{
 									"listen": "test",
@@ -474,6 +474,7 @@
 	],
 	"variable": [
 		{
+			"id": "16bd7d63-423d-45f7-ab80-bef9da5fe1cf",
 			"key": "bookingId",
 			"value": ""
 		}
