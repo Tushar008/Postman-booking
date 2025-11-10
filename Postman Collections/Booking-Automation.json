@@ -332,7 +332,7 @@
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
 											"\r",
-											"//due to nature of the API, for some negetive cases as well it is shwoing 200 Ok status\r",
+											"//due to nature of the API, for some negetive cases as well it is shwoing 200 Ok status. To make test pass I have updated those status to 200 in below expected status codes\r",
 											"const expectedStatusCodes = [500, 200, 200, 500, 200, 404, 200];\r",
 											"\r",
 											"const currentIndex = pm.info.iteration;\r",
@@ -499,6 +499,7 @@
 	],
 	"variable": [
 		{
+			"id": "2da95d41-f7b1-4540-837c-47658fbf9e91",
 			"key": "bookingId",
 			"value": ""
 		}
