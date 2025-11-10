@@ -273,6 +273,7 @@
 											"\r",
 											"\r",
 											"const bookingId = pm.collectionVariables.get(\"bookingId\");\r",
+											"console.log(bookingId + \"++++++++++++++++++++++++++++\")\r",
 											"console.log(\"Checking for bookingId:\", bookingId);\r",
 											"\r",
 											"\r",
@@ -291,6 +292,13 @@
 										"type": "text/javascript",
 										"packages": {},
 										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"packages": {},
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -474,7 +482,7 @@
 	],
 	"variable": [
 		{
-			"id": "c24ed5ce-5bd8-46dd-be26-e5f2078ea96e",
+			"id": "bc8b8760-3ffa-4aaa-9c4c-3058c630e509",
 			"key": "bookingId",
 			"value": ""
 		}
