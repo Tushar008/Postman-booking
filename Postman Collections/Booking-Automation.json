@@ -230,7 +230,7 @@
 							"response": []
 						},
 						{
-							"name": "Get Booking Id Copy",
+							"name": "Get Booking Id",
 							"event": [
 								{
 									"listen": "test",
@@ -474,7 +474,7 @@
 	],
 	"variable": [
 		{
-			"id": "16bd7d63-423d-45f7-ab80-bef9da5fe1cf",
+			"id": "c24ed5ce-5bd8-46dd-be26-e5f2078ea96e",
 			"key": "bookingId",
 			"value": ""
 		}
