@@ -423,7 +423,7 @@
 											"        \"additionalneeds\": \"Lunch\",\r",
 											"    },\r",
 											"      {\r",
-											"        \"scenario\": \"Special Characters\",\r",
+											"        \"scenario\": \"Invalid url\",\r",
 											"        \"firstname\": \"test\",\r",
 											"        \"lastname\": \"Doe*&\",\r",
 											"        \"totalprice\": 150,\r",
@@ -434,6 +434,18 @@
 											"        },\r",
 											"        \"additionalneeds\": \"Lunch\",\r",
 											"        \"overrideUrl\": \"https://restful-booker.herokuapp.com/bo\"\r",
+											"    },\r",
+											"      {\r",
+											"        \"scenario\": \"Duplicate booking\",\r",
+											"        \"firstname\": \"test\",\r",
+											"        \"lastname\": \"Doe*&\",\r",
+											"        \"totalprice\": 150,\r",
+											"        \"depositpaid\": true,\r",
+											"        \"bookingdates\": {\r",
+											"            \"checkin\": \"2022-01-01\",\r",
+											"            \"checkout\": \"2022-01-10\"\r",
+											"        },\r",
+											"        \"additionalneeds\": \"Lunch\",\r",
 											"    }\r",
 											"];\r",
 											"\r",
@@ -486,6 +498,7 @@
 	],
 	"variable": [
 		{
+			"id": "af87bdcb-e208-45f9-aba5-7f2534a7f635",
 			"key": "bookingId",
 			"value": ""
 		}
