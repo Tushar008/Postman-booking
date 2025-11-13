@@ -235,7 +235,7 @@
 							"response": []
 						},
 						{
-							"name": "Get Booking Id",
+							"name": "Verify created booking exist in database",
 							"event": [
 								{
 									"listen": "test",
@@ -795,7 +795,7 @@
 	],
 	"variable": [
 		{
-			"id": "be6166ee-4753-4b6e-8040-d7d28b13bae9",
+			"id": "2fd375b0-ee60-49f2-9be6-b5fd00160780",
 			"key": "bookingId",
 			"value": ""
 		}
