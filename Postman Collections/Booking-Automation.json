@@ -541,7 +541,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Booking- verify missing required fields Copy",
+							"name": "Create Booking- verify Special character in payload",
 							"event": [
 								{
 									"listen": "test",
@@ -599,6 +599,7 @@
 	],
 	"variable": [
 		{
+			"id": "bbea9390-3b0b-40f3-af5f-2900a7d7f921",
 			"key": "bookingId",
 			"value": ""
 		}
