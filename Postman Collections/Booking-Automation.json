@@ -631,7 +631,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\r\n        \"scenario\": \"verify Special Characters\",\r\n        \"firstname\": \"#$$\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"#$$\",\r\n            \"checkout\": \"#$$\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "    {\r\n        \"scenario\": \"verify Too Long Input\",\r\n        \"firstname\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n        \"lastname\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -651,7 +651,7 @@
 	],
 	"variable": [
 		{
-			"id": "a9f4a7a9-e0a9-4d86-9683-0b6c7091bc63",
+			"id": "8f1b6f8f-3577-481d-8d65-007144c09778",
 			"key": "bookingId",
 			"value": ""
 		}
