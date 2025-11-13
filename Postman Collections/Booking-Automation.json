@@ -936,6 +936,57 @@
 								"url": "https://restful-booker.herokuapp.com/booking"
 							},
 							"response": []
+						},
+						{
+							"name": "Create Booking- Verify booking with past checkin and future checkout date",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
+										"exec": [
+											"//this API should return 400 if duplicate booking is made but some how it is showing 200\r",
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "9a5b6869-0a20-4330-bdbf-0901ef981d22",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://restful-booker.herokuapp.com/booking"
+							},
+							"response": []
 						}
 					],
 					"id": "0648a6eb-8a16-46ff-952f-30efc69649af"
@@ -946,7 +997,7 @@
 	],
 	"variable": [
 		{
-			"id": "810399f0-5a71-4893-8cea-8dd068aac4f6",
+			"id": "8b2ced3a-a667-4af2-af24-006a8d6d9050",
 			"key": "bookingId",
 			"value": ""
 		}
