@@ -1019,8 +1019,9 @@
 											"\r",
 											"// 2. Verify it exists and then execute it\r",
 											"if (typeof setDatesFunction === 'function') {\r",
-											"   // Check-in 7 days from now, 3 day stay duration\r",
-											"pm.globals.get(\"setBookingDates\")(7, 3);\r",
+											"\r",
+											"    // Check-in 7 days from now, 3 day stay duration\r",
+											"setDatesFunction(7, 3);\r",
 											"} else {\r",
 											"    // This log helps debugging if you missed Step 1\r",
 											"    console.error(\"Booking date function not loaded from collection script.\");\r",
@@ -1207,7 +1208,7 @@
 	],
 	"variable": [
 		{
-			"id": "4530f97e-ae71-48b3-b21f-49a519da740c",
+			"id": "84651e3f-1a3a-4412-bcab-c5f93f74cf4a",
 			"key": "bookingId",
 			"value": ""
 		}
