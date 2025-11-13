@@ -933,7 +933,7 @@
 										}
 									}
 								},
-								"url": "https://restful-booker.herokuapp.com/bo"
+								"url": "https://restful-booker.herokuapp.com/booking"
 							},
 							"response": []
 						}
@@ -946,7 +946,7 @@
 	],
 	"variable": [
 		{
-			"id": "c4d51c74-4b72-47d2-8db6-fdde86ebaa62",
+			"id": "810399f0-5a71-4893-8cea-8dd068aac4f6",
 			"key": "bookingId",
 			"value": ""
 		}
