@@ -635,7 +635,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Booking- verify missing required fields",
+							"name": "Create Booking- verify missing required -firstName",
 							"event": [
 								{
 									"listen": "test",
@@ -1207,7 +1207,7 @@
 	],
 	"variable": [
 		{
-			"id": "5b301e49-beaa-4b66-b848-67b506d12864",
+			"id": "49e8611c-58c7-4b1b-9105-29e8f3afa3f9",
 			"key": "bookingId",
 			"value": ""
 		}
