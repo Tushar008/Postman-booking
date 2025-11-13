@@ -498,7 +498,9 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
-											""
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -547,6 +549,7 @@
 	],
 	"variable": [
 		{
+			"id": "e2e55596-029a-4673-9527-e6cb6568e6b8",
 			"key": "bookingId",
 			"value": ""
 		}
