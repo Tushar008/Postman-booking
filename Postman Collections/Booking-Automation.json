@@ -1062,7 +1062,6 @@
 									"script": {
 										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
 										"exec": [
-											"// Example for Current Dates (Scenario A)\r",
 											"\r",
 											"// 1. Get the function reference from globals\r",
 											"const setDatesFunction = pm.globals.get(\"setBookingDates\");\r",
@@ -1194,6 +1193,7 @@
 	],
 	"variable": [
 		{
+			"id": "fd893a31-e752-4e26-9692-82863205ebb8",
 			"key": "bookingId",
 			"value": ""
 		}
