@@ -989,7 +989,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Booking- Verify booking with",
+							"name": "Create Booking- Verify booking with both checkin and checkout date in future",
 							"event": [
 								{
 									"listen": "test",
@@ -1048,7 +1048,7 @@
 	],
 	"variable": [
 		{
-			"id": "1061f15e-8d64-4ea7-8f3e-03e70bb3bf2d",
+			"id": "5af3abc5-6d9a-4c9e-afdb-18df806e879b",
 			"key": "bookingId",
 			"value": ""
 		}
