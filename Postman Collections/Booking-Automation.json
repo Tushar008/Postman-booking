@@ -646,7 +646,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{{requestBody}}",
+									"raw": "    {\r\n        //firstname is missing\r\n        \"lastname\": \"Doe\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -666,7 +666,7 @@
 	],
 	"variable": [
 		{
-			"id": "23ecf0a4-fd37-4bf9-828c-11c5f11295d0",
+			"id": "a398da08-6e85-4960-9f71-f71076dad117",
 			"key": "bookingId",
 			"value": ""
 		}
