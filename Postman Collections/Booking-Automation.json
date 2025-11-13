@@ -329,161 +329,6 @@
 					"name": "Negetive-Tests",
 					"item": [
 						{
-							"name": "Create Booking -invalid tests",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
-										"exec": [
-											"\r",
-											"//due to nature of the API, for some negetive cases as well it is shwoing 200 Ok status. To make test pass I have updated those status to 200 in below expected status codes\r",
-											"const expectedStatusCodes = [500, 200, 200, 500, 200, 404, 200];\r",
-											"\r",
-											"const currentIndex = pm.info.iteration;\r",
-											"\r",
-											"// Get current scenario (set from Pre-request Script)\r",
-											"const scenario = pm.variables.get(\"scenario\");\r",
-											"\r",
-											"const expectedStatus = expectedStatusCodes[currentIndex];\r",
-											"\r",
-											"console.log(`Scenario: ${scenario}`);\r",
-											"console.log(`Expected Status: ${expectedStatus}, Actual: ${pm.response.code}`);\r",
-											"\r",
-											"pm.test(`Scenario \"${scenario}\" should return ${expectedStatus}`, function () {\r",
-											"    pm.expect(pm.response.code).to.eql(expectedStatus);\r",
-											"});\r",
-											"\r",
-											"console.log(\"Response Body:\", pm.response.text());\r",
-											""
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
-										"exec": [
-											"\r",
-											"const payload = [\r",
-											"    {\r",
-											"        \"scenario\": \"verify Missing Required Field\",\r",
-											"        \"lastname\": \"Doe\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\"\r",
-											"    },\r",
-											"    {\r",
-											"        \"scenario\": \"verify Special Characters\",\r",
-											"        \"firstname\": \"#$$\",\r",
-											"        \"lastname\": \"Doe*&\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\"\r",
-											"    },\r",
-											"    {\r",
-											"        \"scenario\": \"verify Too Long Input\",\r",
-											"        \"firstname\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r",
-											"        \"lastname\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\"\r",
-											"    },\r",
-											"    {\r",
-											"        \"scenario\": \"verify Null Values for payload\",\r",
-											"        \"firstname\": null,\r",
-											"        \"lastname\": null,\r",
-											"        \"totalprice\": null,\r",
-											"        \"depositpaid\": null,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": null,\r",
-											"            \"checkout\": null\r",
-											"        },\r",
-											"        \"additionalneeds\": null\r",
-											"    },\r",
-											"      {\r",
-											"        \"scenario\": \"verify Invalid url\",\r",
-											"        \"firstname\": \"test\",\r",
-											"        \"lastname\": \"Doe*&\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\",\r",
-											"        \"overrideUrl\": \"https://restful-booker.herokuapp.com/bo\"\r",
-											"    },\r",
-											"      {\r",
-											"        \"scenario\": \"verify Duplicate booking\",\r",
-											"        \"firstname\": \"test\",\r",
-											"        \"lastname\": \"Doe*&\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\",\r",
-											"    }\r",
-											"];\r",
-											"\r",
-											"let current = payload[pm.info.iteration];\r",
-											"\r",
-											"\r",
-											"pm.variables.set(\"requestBody\", JSON.stringify(current));\r",
-											"pm.variables.set(\"scenario\", current.scenario);\r",
-											"pm.variables.set(\"overrideUrl\", current.overrideUrl || \"\");\r",
-											"\r",
-											"if (current.overrideUrl) {\r",
-											"    pm.request.url = current.overrideUrl;\r",
-											"    console.log(`Using invalid URL for scenario: ${current.scenario}`);\r",
-											"} else {\r",
-											"    console.log(`Using normal URL for scenario: ${current.scenario}`);\r",
-											"}"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								}
-							],
-							"id": "520da77c-86c3-40ec-b482-35c30c39e75b",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{{requestBody}}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://restful-booker.herokuapp.com/booking"
-							},
-							"response": []
-						},
-						{
 							"name": "Create Booking- verify missing required -firstName",
 							"event": [
 								{
@@ -723,7 +568,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\r\n        \"scenario\": \"verify Special Characters\",\r\n        \"firstname\": \"#$$\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"#$$\",\r\n            \"checkout\": \"#$$\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "    {\r\n        \"firstname\": \"#$$\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"#$$\",\r\n            \"checkout\": \"#$$\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1206,6 +1051,7 @@
 	],
 	"variable": [
 		{
+			"id": "9caae2b2-adf0-40a5-985f-f1fda28c3a0e",
 			"key": "bookingId",
 			"value": ""
 		}
