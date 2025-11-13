@@ -1062,6 +1062,21 @@
 									"script": {
 										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
 										"exec": [
+											"// Function to format a date as YYYY-MM-DD\r",
+											"function formatDate(date) {\r",
+											"    const year = date.getFullYear();\r",
+											"    const month = (date.getMonth() + 1).toString().padStart(2, '0');\r",
+											"    const day = date.getDate().toString().padStart(2, '0');\r",
+											"    return `${year}-${month}-${day}`;\r",
+											"}\r",
+											"\r",
+											"const today = new Date();\r",
+											"// Format today's date\r",
+											"const currentDateFormatted = formatDate(today);\r",
+											"\r",
+											"// Set both environment variables to the same current date\r",
+											"pm.environment.set(\"checkin_date\", currentDateFormatted);\r",
+											"pm.environment.set(\"checkout_date\", currentDateFormatted);\r",
 											""
 										],
 										"type": "text/javascript",
@@ -1079,7 +1094,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2026-01-01\",\r\n            \"checkout\": \"2026-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "{\r\n  \"firstname\": \"test\",\r\n  \"lastname\": \"Doe*&\",\r\n  \"totalprice\": 150,\r\n  \"depositpaid\": true,\r\n  \"bookingdates\": {\r\n    \"checkin\": \"{{checkin_date}}\",\r\n    \"checkout\": \"{{checkout_date}}\"\r\n  },\r\n  \"additionalneeds\": \"Lunch\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1099,6 +1114,7 @@
 	],
 	"variable": [
 		{
+			"id": "c31c5dee-1ab9-40c9-8c1a-d90de7f8886a",
 			"key": "bookingId",
 			"value": ""
 		}
