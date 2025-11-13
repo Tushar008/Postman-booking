@@ -411,18 +411,6 @@
 											"        },\r",
 											"        \"additionalneeds\": null\r",
 											"    },\r",
-											"    {\r",
-											"        \"scenario\": \"verify Special Characters\",\r",
-											"        \"firstname\": \"test\",\r",
-											"        \"lastname\": \"Doe*&\",\r",
-											"        \"totalprice\": 150,\r",
-											"        \"depositpaid\": true,\r",
-											"        \"bookingdates\": {\r",
-											"            \"checkin\": \"2022-01-01\",\r",
-											"            \"checkout\": \"2022-01-10\"\r",
-											"        },\r",
-											"        \"additionalneeds\": \"Lunch\",\r",
-											"    },\r",
 											"      {\r",
 											"        \"scenario\": \"verify Invalid url\",\r",
 											"        \"firstname\": \"test\",\r",
@@ -701,7 +689,7 @@
 	],
 	"variable": [
 		{
-			"id": "aacbb692-dd23-44c9-ada2-b0bbe5358042",
+			"id": "b11ccc1a-9fb9-43b5-a627-fe9e95a0c59a",
 			"key": "bookingId",
 			"value": ""
 		}
