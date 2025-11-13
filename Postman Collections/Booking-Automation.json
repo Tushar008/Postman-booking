@@ -685,7 +685,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Booking- verify missing required -firstName Copy",
+							"name": "Create Booking- verify missing required field- checkin",
 							"event": [
 								{
 									"listen": "test",
@@ -1257,6 +1257,7 @@
 	],
 	"variable": [
 		{
+			"id": "0df62406-5dad-44d0-aed1-d42ca0559dda",
 			"key": "bookingId",
 			"value": ""
 		}
