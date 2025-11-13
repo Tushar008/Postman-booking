@@ -1028,7 +1028,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2026-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2026-01-01\",\r\n            \"checkout\": \"2026-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1048,6 +1048,7 @@
 	],
 	"variable": [
 		{
+			"id": "800d7fe2-ddae-49f9-9e71-059c4fa6a5cc",
 			"key": "bookingId",
 			"value": ""
 		}
