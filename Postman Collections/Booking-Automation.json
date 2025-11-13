@@ -769,7 +769,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "      {\r\n        \"scenario\": \"verify Duplicate booking\",\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -789,7 +789,7 @@
 	],
 	"variable": [
 		{
-			"id": "51c29013-01cb-4dc8-b96c-97269be4a9c7",
+			"id": "dda5a901-ce37-46f1-af68-937c3b84fffc",
 			"key": "bookingId",
 			"value": ""
 		}
