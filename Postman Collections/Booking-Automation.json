@@ -988,6 +988,11 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "New Folder",
+					"item": [],
+					"id": "17e86668-f93b-41ee-ba84-4105dadd388c"
 				}
 			],
 			"id": "105694be-c1ab-4ad8-ac3a-c32054dae381"
@@ -1051,6 +1056,7 @@
 	],
 	"variable": [
 		{
+			"id": "30f79bad-7045-43da-bf6b-aa4480047cfc",
 			"key": "bookingId",
 			"value": ""
 		}
