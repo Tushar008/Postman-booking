@@ -1062,22 +1062,7 @@
 									"script": {
 										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
 										"exec": [
-											"// Function to format a date as YYYY-MM-DD\r",
-											"function formatDate(date) {\r",
-											"    const year = date.getFullYear();\r",
-											"    const month = (date.getMonth() + 1).toString().padStart(2, '0');\r",
-											"    const day = date.getDate().toString().padStart(2, '0');\r",
-											"    return `${year}-${month}-${day}`;\r",
-											"}\r",
-											"\r",
-											"const today = new Date();\r",
-											"// Format today's date\r",
-											"const currentDateFormatted = formatDate(today);\r",
-											"\r",
-											"// Set both environment variables to the same current date\r",
-											"pm.environment.set(\"checkin_date\", currentDateFormatted);\r",
-											"pm.environment.set(\"checkout_date\", currentDateFormatted);\r",
-											""
+											"pm.globals.get(\"setBookingDates\")(0, 0);"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -1170,7 +1155,7 @@
 	],
 	"variable": [
 		{
-			"id": "4f68e179-8960-455a-91f6-4ae176ca03ae",
+			"id": "1c5b3296-9035-48bb-a2b2-d78cd5e736d0",
 			"key": "bookingId",
 			"value": ""
 		}
