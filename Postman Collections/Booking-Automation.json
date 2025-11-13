@@ -735,6 +735,56 @@
 							"response": []
 						},
 						{
+							"name": "Create Booking- verify missing required field- checkout",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
+										"exec": [
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(500);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "74644774-ee52-44ba-b460-af36e83939ee",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://restful-booker.herokuapp.com/booking"
+							},
+							"response": []
+						},
+						{
 							"name": "Create Booking- verify Special character in payload",
 							"event": [
 								{
@@ -1257,7 +1307,7 @@
 	],
 	"variable": [
 		{
-			"id": "0e4e1015-23d9-4cd8-a8da-6fb18a916b53",
+			"id": "6b91c318-fd51-4708-b5d5-1caa74a23b7d",
 			"key": "bookingId",
 			"value": ""
 		}
