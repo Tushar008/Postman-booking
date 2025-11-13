@@ -12,7 +12,7 @@
 					"name": "Positive-Test",
 					"item": [
 						{
-							"name": "Get Booking Id",
+							"name": "Verify user can get all bookings",
 							"event": [
 								{
 									"listen": "test",
@@ -795,7 +795,7 @@
 	],
 	"variable": [
 		{
-			"id": "2fd375b0-ee60-49f2-9be6-b5fd00160780",
+			"id": "ac588834-6a2d-474e-988f-9dd14a2c160e",
 			"key": "bookingId",
 			"value": ""
 		}
