@@ -1000,10 +1000,59 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
+											"pm.collectionVariables.set(\"bookingId\", pm.response.json().bookingid);\r",
+											"\r",
 											"pm.test(\"verify status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});\r",
-											""
+											"\r",
+											"pm.test(\"Response time should be below minimum benchmark\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											"\r",
+											"const schema = {\r",
+											"  type: \"object\",\r",
+											"  required: [\"bookingid\", \"booking\"],\r",
+											"  properties: {\r",
+											"    bookingid: { type: \"integer\" },\r",
+											"    booking: {\r",
+											"      type: \"object\",\r",
+											"      required: [\"firstname\", \"lastname\", \"totalprice\", \"depositpaid\", \"bookingdates\"],\r",
+											"      properties: {\r",
+											"        firstname: { type: \"string\" },\r",
+											"        lastname: { type: \"string\" },\r",
+											"        totalprice: { type: \"number\" },\r",
+											"        depositpaid: { type: \"boolean\" },\r",
+											"        bookingdates: {\r",
+											"          type: \"object\",\r",
+											"          required: [\"checkin\", \"checkout\"],\r",
+											"          properties: {\r",
+											"            checkin: { type: \"string\" },\r",
+											"            checkout: { type: \"string\" }\r",
+											"          }\r",
+											"        }\r",
+											"      }\r",
+											"    }\r",
+											"  }\r",
+											"};\r",
+											"\r",
+											"pm.test(\"verify response contains bookingid\", function () {\r",
+											"    pm.expect(pm.response.json()).to.have.property(\"bookingid\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"verify booking structure\", function () {\r",
+											"    const booking = pm.response.json().booking;\r",
+											"    pm.expect(booking.firstname).to.be.a(\"string\");\r",
+											"    pm.expect(booking.lastname).to.be.a(\"string\");\r",
+											"    pm.expect(booking.totalprice).to.be.a(\"number\");\r",
+											"    pm.expect(booking.depositpaid).to.be.a(\"boolean\");\r",
+											"    pm.expect(booking.bookingdates.checkin).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);\r",
+											"    pm.expect(booking.bookingdates.checkout).to.match(/^\\d{4}-\\d{2}-\\d{2}$/);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Schema valid for POST response\", function () {\r",
+											"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;\r",
+											"});"
 										],
 										"type": "text/javascript",
 										"packages": {},
@@ -1039,24 +1088,7 @@
 										}
 									}
 								},
-								"url": {
-									"raw": "https://restful-booker.herokuapp.com/booking?bookingid= 4962",
-									"protocol": "https",
-									"host": [
-										"restful-booker",
-										"herokuapp",
-										"com"
-									],
-									"path": [
-										"booking"
-									],
-									"query": [
-										{
-											"key": "bookingid",
-											"value": " 4962"
-										}
-									]
-								}
+								"url": "https://restful-booker.herokuapp.com/booking"
 							},
 							"response": []
 						}
@@ -1125,6 +1157,7 @@
 	],
 	"variable": [
 		{
+			"id": "3eb6497e-edf0-413b-b91d-7b09e5172be6",
 			"key": "bookingId",
 			"value": ""
 		}
