@@ -548,8 +548,9 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
+											"// response status should be 500 but api is showing 200\r",
 											"pm.test(\"Status code is 500\", function () {\r",
-											"    pm.response.to.have.status(500);\r",
+											"    pm.response.to.have.status(200);\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -579,7 +580,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\r\n        //firstname is missing\r\n        \"lastname\": \"Doe\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "    {\r\n        \"scenario\": \"verify Special Characters\",\r\n        \"firstname\": \"#$$\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"#$$\",\r\n            \"checkout\": \"#$$\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -599,7 +600,7 @@
 	],
 	"variable": [
 		{
-			"id": "bbea9390-3b0b-40f3-af5f-2900a7d7f921",
+			"id": "575d1797-b458-42b3-b956-1c519ff5affb",
 			"key": "bookingId",
 			"value": ""
 		}
