@@ -719,14 +719,14 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "   {\r\n        \"firstname\": null,\r\n        \"lastname\": null,\r\n        \"totalprice\": null,\r\n        \"depositpaid\": null,\r\n        \"bookingdates\": {\r\n            \"checkin\": null,\r\n            \"checkout\": null\r\n        },\r\n        \"additionalneeds\": null\r\n    }",
+									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\",\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
 										}
 									}
 								},
-								"url": "https://restful-booker.herokuapp.com/booking"
+								"url": "https://restful-booker.herokuapp.com/bo"
 							},
 							"response": []
 						}
@@ -739,7 +739,7 @@
 	],
 	"variable": [
 		{
-			"id": "e823aac3-2122-4ecd-8d85-1680254435d2",
+			"id": "3f79e318-0bfb-420b-9116-0b1f2cf0aac2",
 			"key": "bookingId",
 			"value": ""
 		}
