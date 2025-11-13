@@ -498,25 +498,6 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
-											"\r",
-											"//due to nature of the API, for some negetive cases as well it is shwoing 200 Ok status. To make test pass I have updated those status to 200 in below expected status codes\r",
-											"const expectedStatusCodes = [500, 200, 200, 500, 200, 404, 200];\r",
-											"\r",
-											"const currentIndex = pm.info.iteration;\r",
-											"\r",
-											"// Get current scenario (set from Pre-request Script)\r",
-											"const scenario = pm.variables.get(\"scenario\");\r",
-											"\r",
-											"const expectedStatus = expectedStatusCodes[currentIndex];\r",
-											"\r",
-											"console.log(`Scenario: ${scenario}`);\r",
-											"console.log(`Expected Status: ${expectedStatus}, Actual: ${pm.response.code}`);\r",
-											"\r",
-											"pm.test(`Scenario \"${scenario}\" should return ${expectedStatus}`, function () {\r",
-											"    pm.expect(pm.response.code).to.eql(expectedStatus);\r",
-											"});\r",
-											"\r",
-											"console.log(\"Response Body:\", pm.response.text());\r",
 											""
 										],
 										"type": "text/javascript",
@@ -566,7 +547,7 @@
 	],
 	"variable": [
 		{
-			"id": "16b60d26-ade9-420c-9a5b-d5440fe7cef1",
+			"id": "ea07b446-4a4e-48cf-a75e-70e4022f0db2",
 			"key": "bookingId",
 			"value": ""
 		}
