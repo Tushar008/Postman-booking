@@ -682,7 +682,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\r\n        \"scenario\": \"verify Too Long Input\",\r\n        \"firstname\": \"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA\",\r\n        \"lastname\": \"BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"raw": "   {\r\n        \"firstname\": null,\r\n        \"lastname\": null,\r\n        \"totalprice\": null,\r\n        \"depositpaid\": null,\r\n        \"bookingdates\": {\r\n            \"checkin\": null,\r\n            \"checkout\": null\r\n        },\r\n        \"additionalneeds\": null\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -702,7 +702,7 @@
 	],
 	"variable": [
 		{
-			"id": "87f7870d-93c3-46fe-88f1-e6440d2c0ebd",
+			"id": "b8ebd84f-7969-4bc5-b439-e92e1c14b635",
 			"key": "bookingId",
 			"value": ""
 		}
