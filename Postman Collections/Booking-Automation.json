@@ -204,8 +204,13 @@
 								{
 									"listen": "prerequest",
 									"script": {
+										"id": "76a7c68d-5322-441d-8ed8-f9999200ecdc",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
 										"packages": {},
-										"type": "text/javascript"
+										"requests": {}
 									}
 								}
 							],
@@ -790,7 +795,7 @@
 	],
 	"variable": [
 		{
-			"id": "354c8610-9a17-4d61-a47d-8994c346d1d5",
+			"id": "cf9b24be-d2ff-412c-a6cf-39642561ace6",
 			"key": "bookingId",
 			"value": ""
 		}
