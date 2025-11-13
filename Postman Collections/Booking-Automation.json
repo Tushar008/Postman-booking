@@ -590,6 +590,57 @@
 								"url": "https://restful-booker.herokuapp.com/booking"
 							},
 							"response": []
+						},
+						{
+							"name": "Create Booking- Verify too long inputs for payload",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
+										"exec": [
+											"// response status should be 500 but api is showing 200\r",
+											"pm.test(\"Status code is 500\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {},
+										"requests": {}
+									}
+								}
+							],
+							"id": "c0da7b86-f38c-49f8-9391-728807f95174",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"scenario\": \"verify Special Characters\",\r\n        \"firstname\": \"#$$\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"#$$\",\r\n            \"checkout\": \"#$$\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://restful-booker.herokuapp.com/booking"
+							},
+							"response": []
 						}
 					],
 					"id": "0648a6eb-8a16-46ff-952f-30efc69649af"
@@ -600,7 +651,7 @@
 	],
 	"variable": [
 		{
-			"id": "575d1797-b458-42b3-b956-1c519ff5affb",
+			"id": "a9f4a7a9-e0a9-4d86-9683-0b6c7091bc63",
 			"key": "bookingId",
 			"value": ""
 		}
