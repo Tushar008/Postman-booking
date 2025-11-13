@@ -1123,9 +1123,65 @@
 			"id": "105694be-c1ab-4ad8-ac3a-c32054dae381"
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a67e94f4-624c-42e3-9cae-d49248de3be8",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"// A common function to set checkin and checkout dates relative to the current date.\r",
+					"// Accepts optional 'daysOffset' for checkin relative to today.\r",
+					"// Accepts optional 'stayDuration' in days.\r",
+					"pm.globals.set(\"setBookingDates\", function (checkinOffsetDays = 0, stayDurationDays = 1) {\r",
+					"    function formatDate(date) {\r",
+					"        const year = date.getFullYear();\r",
+					"        const month = (date.getMonth() + 1).toString().padStart(2, '0');\r",
+					"        const day = date.getDate().toString().padStart(2, '0');\r",
+					"        return `${year}-${month}-${day}`;\r",
+					"    }\r",
+					"\r",
+					"    const today = new Date();\r",
+					"\r",
+					"    // Calculate Check-in Date\r",
+					"    const checkInDateObj = new Date(today);\r",
+					"    checkInDateObj.setDate(today.getDate() + checkinOffsetDays);\r",
+					"    const checkInDateFormatted = formatDate(checkInDateObj);\r",
+					"\r",
+					"    // Calculate Check-out Date\r",
+					"    const checkOutDateObj = new Date(checkInDateObj);\r",
+					"    checkOutDateObj.setDate(checkInDateObj.getDate() + stayDurationDays);\r",
+					"    const checkOutDateFormatted = formatDate(checkOutDateObj);\r",
+					"\r",
+					"    // Set variables for use in the request body\r",
+					"    // Using environment variables is usually best; adjust if you prefer global or collection variables.\r",
+					"    pm.environment.set(\"checkin_date\", checkInDateFormatted);\r",
+					"    pm.environment.set(\"checkout_date\", checkOutDateFormatted);\r",
+					"\r",
+					"    console.log(`Set dates: Check-in: ${checkInDateFormatted}, Check-out: ${checkOutDateFormatted}`);\r",
+					"});\r",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c98e24a4-a80e-42d1-b1d4-276267661806",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
-			"id": "c1795248-e2cf-4894-9bd9-c5078cac4614",
+			"id": "940e254c-02ec-4c99-b4ae-436b31a4dbc2",
 			"key": "bookingId",
 			"value": ""
 		}
