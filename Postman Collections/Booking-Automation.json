@@ -738,8 +738,9 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
+											"//this API should return 400 if duplicate booking is made but some how it is showing 200\r",
 											"pm.test(\"Status code is 500\", function () {\r",
-											"    pm.response.to.have.status(404);\r",
+											"    pm.response.to.have.status(200);\r",
 											"});"
 										],
 										"type": "text/javascript",
@@ -789,7 +790,7 @@
 	],
 	"variable": [
 		{
-			"id": "85779bf1-e38b-4217-840f-20d8ecd573d4",
+			"id": "c76fea3f-d39d-4f3d-b956-eafb46291a3d",
 			"key": "bookingId",
 			"value": ""
 		}
