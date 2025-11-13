@@ -235,57 +235,6 @@
 							"response": []
 						},
 						{
-							"name": "Create Booking- Verify duplicate booking Copy",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
-										"exec": [
-											"//this API should return 400 if duplicate booking is made but some how it is showing 200\r",
-											"pm.test(\"Status code is 500\", function () {\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"id": "3ddd5e06-d27f-41c8-9da0-d433faa39664",
-										"exec": [
-											""
-										],
-										"type": "text/javascript",
-										"packages": {},
-										"requests": {}
-									}
-								}
-							],
-							"id": "dee175d4-ab18-4bfa-97a9-8af77b8c7a99",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "      {\r\n        \"firstname\": \"test\",\r\n        \"lastname\": \"Doe*&\",\r\n        \"totalprice\": 150,\r\n        \"depositpaid\": true,\r\n        \"bookingdates\": {\r\n            \"checkin\": \"2022-01-01\",\r\n            \"checkout\": \"2022-01-10\"\r\n        },\r\n        \"additionalneeds\": \"Lunch\"\r\n    }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "https://restful-booker.herokuapp.com/booking"
-							},
-							"response": []
-						},
-						{
 							"name": "Verify created booking exist in database",
 							"event": [
 								{
@@ -1257,7 +1206,7 @@
 	],
 	"variable": [
 		{
-			"id": "87e0bcc7-2c16-4c1c-93be-5b8bc8dc0967",
+			"id": "a1ef5159-61a7-4898-8ca9-b0163678f66f",
 			"key": "bookingId",
 			"value": ""
 		}
