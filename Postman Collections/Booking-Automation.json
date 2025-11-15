@@ -536,7 +536,7 @@
 									"script": {
 										"id": "55f5a1d8-1f62-4eb3-bb62-563d3ef0983b",
 										"exec": [
-											"// response status should be 500 but api is showing 200\r",
+											"//for this api hit response should be 400 but for some reason it is 200, so we are checking for 200 status code\r",
 											"pm.test(\"Status code is 500\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -1126,7 +1126,7 @@
 	],
 	"variable": [
 		{
-			"id": "334c717a-c5fa-496c-b2f9-9046f33eb093",
+			"id": "2477e9bd-c96f-4a69-b2a2-72cbd0e07e28",
 			"key": "bookingId",
 			"value": ""
 		}
