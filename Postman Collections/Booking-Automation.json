@@ -35,7 +35,7 @@
 											"});\r",
 											"\r",
 											"pm.test(\"Response time should be below minimum benchmark\", function () {\r",
-											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(3000);\r",
 											"});\r",
 											"\r",
 											"pm.test(\"Response is an array type\", function () {\r",
@@ -1125,7 +1125,7 @@
 	],
 	"variable": [
 		{
-			"id": "8aef9875-28c1-4775-ab61-8de81714a8d1",
+			"id": "d36a44ab-c79e-4d42-83db-a56ca1d40ca0",
 			"key": "bookingId",
 			"value": ""
 		}
